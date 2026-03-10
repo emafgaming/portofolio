@@ -3,255 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezzar Muhammad · Portofolio</title>
-    <!-- Font Awesome 5 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <!-- CSS Eksternal -->
+    <title>Ezzar Muhammad · Portfolio 2026</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- NAVBAR (tetap dengan gradasi dan nama) -->
-    <nav class="navbar">
-        <div class="logo">
-            <h2><b>Ezzar Muhammad Akbar Firdaus</b></h2>
+
+    <!-- ========== 1. LOADING SCREEN ========== -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="logo-loader">
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="loader-text">memuat pengalaman visual ...</p>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#about">Tentang Saya</a></li>
-            <li><a href="#education">Pendidikan</a></li>
-            <li><a href="#skills">Keahlian</a></li>
-            <li><a href="#hobbies">Hobi</a></li>
-        </ul>
+    </div>
+
+    <!-- ========== 2. NAVBAR ========== -->
+    <nav id="navbar" class="glass-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#">Ezzar Muhammad<span class="neon-dot">Akbar Firdaus</span></a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#" class="nav-link" data-section="pendidikan">Pendidikan</a></li>
+                <li><a href="#" class="nav-link" data-section="certificates">Certificates</a></li>
+                <li><a href="#" class="nav-link" data-section="mini-game">Mini Game</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" class="btn-download" download><i class="fas fa-download"></i> CV</a>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <main>
-       <!-- SECTION HERO / BERANDA (dengan foto) -->
-        <section id="home" class="hero">
+    <!-- ========== SECTION CONTAINER ========== -->
+    <div id="section-container">
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="section active-section">
+            <canvas id="particle-canvas"></canvas>
             <div class="hero-container">
                 <div class="hero-text">
-                    <h1>Halo Semua 👋, Saya <span class="highlight">Ezzar Muhammad Akbar Firdaus</span></h1>
-                    <h2>Web Developer</h2>
-                    <p>Portofolio ini menampilkan proyek dan kontribusi saya sebagai pengembang di bidang teknologi.</p>
-                    <a href="#contact" class="btn-primary">Hubungi Saya</a>
+                    <p class="greeting">Halo, saya</p>
+                    <h1 class="name">Ezzar Muhammad Akbar Firdaus</h1>
+                    <div class="typed-wrapper">
+                        <span class="static-text">saya seorang </span>
+                        <span id="typed-element"></span>
+                    </div>
+                    <p class="short-bio">Membangun solusi digital yang imersif & fungsional. Spesialis Frontend & enthusiast jaringan.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-primary" data-section="projects"><i class="fas fa-eye"></i> Lihat Portfolio</a>
+                        <a href="#" class="btn-outline" data-section="contact"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    </div>
                 </div>
-                
-                <!-- FOTO PROFIL - Aktifkan bagian ini dan sesuaikan src dengan lokasi fotomu -->
                 <div class="hero-image">
-                    <img src="foto.ezzar.png" alt="Foto Ezzar Muhammad Akbar Firdaus" class="profile-photo">
-                    <!-- Efek bingkai gradient (opsional) -->
-                    <div class="photo-frame"></div>
+                    <div class="profile-glow">
+                        <img src="games/images/foto.ezzar.png" alt="Ezzar Muhammad Akbar Firdaus" class="profile-pic">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION TENTANG SAYA (optional, bisa diisi nanti) -->
-        <section id="about" class="about">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about section">
             <div class="container">
-                <h2 class="section-title">Tentang Saya</h2>
+                <h2 class="section-title">Tentang Saya <span class="neon-bar"></span></h2>
                 <div class="about-content">
-                    <p>Halo! Saya Ezzar Muhammad Akbar Firdaus, seorang mahasiswa dari LP3I Pekanbaru. Saya memiliki ketertarikan besar dengan pembuatan Website dan berkeinginan menjadi seorang Web Developer.</p>
-                    <p>Saat ini saya sedang mendalami pengembangan web untuk menjadi Front End Developer. Portofolio ini adalah kumpulan proyek yang pernah saya kerjakan untuk mengasah kemampuan.</p>
-                    <p>📧 <strong>Email:</strong> ezzarmuhammadakbarfirdaus@gmail.com</p>
-                    <p>📍 <strong>Domisili:</strong>Pekanbaru,Riau</p>
+                    <p>Saya adalah mahasiswa IT yang mendalami dunia pengembangan web dan jaringan. Sejak 2025, saya telah membangun berbagai proyek dari frontend yang memukau hingga konfigurasi mikrotik. Saya percaya teknologi adalah seni untuk memecahkan masalah.</p>
+                    <p>Saat ini saya fokus memperdalam arsitektur frontend modern, desain sistem, dan infrastruktur jaringan. Tujuan karir saya adalah menjadi Cloud, Network-ready Developer & Web Developer yang mampu bekerja di persimpangan software dan hardware.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION PENDIDIKAN -->
-        <section id="education" class="education">
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="skills section">
             <div class="container">
-                <h2 class="section-title">Pendidikan</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <h3>Politeknik LP3I Pekanbaru</h3>
-                            <span class="timeline-year">2025 - 2028</span>
-                        </div>
-                        <div class="timeline-right">
-                            <h4>D2 Manajemen Informatika</h4>
-                            <p>Mempelajari dasar-dasar pemrograman, algoritma, dan struktur data</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <h3>SMA Negeri 1 Perhentian Raja</h3>
-                            <span class="timeline-year">2022 - 2025</span>
-                        </div>
-                        <div class="timeline-right">
-                            <h4>Ilmu Pengetahuan Alam (IPA)</h4>
-                            <p>Lulus dengan nilai yang memuaskan</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION KEAHLIAN -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2 class="section-title">Keahlian</h2>
+                <h2 class="section-title">Kompetensi <span class="neon-bar"></span></h2>
                 <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-code"></i> Bahasa Pemrograman</h3>
-                        <ul>
-                            <li>HTML & CSS (Dasar/Menengah)</li>
-                            <li>JavaScript (Dasar)</li>
-                            <li>[PHP/Python/Java, dll]</li>
-                        </ul>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <h3>HTML5</h3>
+                        <div class="progress-container"><div class="progress-bar" data-width="95">95%</div></div>
                     </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-tools"></i> Tools & Framework</h3>
-                        <ul>
-                            <li>Visual Studio Code</li>
-                            <li>Bootstrap/Tailwind</li>
-                            <li>Git/GitHub</li>
-                        </ul>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS3</h3>
+                        <div class="progress-container"><div class="progress-bar" data-width="92">92%</div></div>
                     </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-users"></i> Soft Skills</h3>
-                        <ul>
-                            <li>Komunikasi</li>
-                            <li>Kerja Tim</li>
-                            <li>Pemecahan Masalah</li>
-                            <li>Manajemen Waktu</li>
-                        </ul>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-js"></i></div>
+                        <h3>JavaScript</h3>
+                        <div class="progress-container"><div class="progress-bar" data-width="88">88%</div></div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION HOBI -->
-        <section id="hobbies" class="hobbies">
-            <div class="container">
-                <h2 class="section-title">Hobi</h2>
-                <div class="hobbies-grid">
-                    <div class="hobby-item">
-                        <i class="fas fa-gamepad"></i>
-                        <p>Bermain Game RPG (untuk relaksasi)</p>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Networking</h3>
+                        <div class="progress-container"><div class="progress-bar" data-width="80">80%</div></div>
                     </div>
-                    <div class="hobby-item">
-                        <i class="fas fa-headphones-alt"></i>
-                        <p>Mendengarkan Musik/Podcast</p>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>Database</h3>
+                        <div class="progress-container"><div class="progress-bar" data-width="75">75%</div></div>
                     </div>
-                    <div class="hobby-item">
-                        <i class="fas fa-fish"></i>
-                        <p>Memancing</p>
-                    </div>
-                    <div class="hobby-item">
-                        <i class="fas fa-running"></i>
-                        <p>Lari</p>
-                    </div>
-                    <div class="hobby-item">
-                        <i class="fas fa-utensils"></i>
-                        <p>Mencoba Makanan Baru</p>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>UI Design</h3>
+                        <div class="progress-container"><div class="progress-bar" data-width="85">85%</div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION PROYEK (seperti di contoh, dengan grid) -->
-        <section id="projects" class="projects">
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects section">
             <div class="container">
-                <h2 class="section-title">Project</h2>
-                <p class="section-subtitle">Berikut beberapa project yang pernah / sedang saya kembangkan</p>
+                <h2 class="section-title">Proyek Terbaru <span class="neon-bar"></span></h2>
                 <div class="projects-grid">
-                    <!-- Card Project 1 (Contoh) -->
-                    <div class="project-card">
-                        <h3>Website Portofolio Pribadi</h3>
-                        <p>Website portofolio responsif yang menampilkan profil, keahlian, dan proyek. Dibangun dengan HTML, CSS, dan JavaScript.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                    <div class="project-card tilt-card">
+                        <div class="project-img"><img src="games/images/LogoReizen.png" alt=""></div>
+                        <div class="project-info">
+                            <h3>Berbelanja Online</h3>
+                            <p>Dashboard analitik dengan visualisasi data real-time dan tema terang.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/emafgaming/Shoping" class="btn-small" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://emafgaming.github.io/Shoping/" class="btn-small primary" target="_blank">Lihat Project <i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
-                        <a href="#" class="btn-outline" target="_blank">Lihat Project <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="project-card">
-                        <h3>Aplikasi [Nama Aplikasi]</h3>
-                        <p>[Deskripsi singkat aplikasi yang kamu buat atau ingin buat, misal: Aplikasi pencatatan pengeluaran sederhana berbasis web.]</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
+                    <div class="project-card tilt-card">
+                        <div class="project-img"><img src="" alt=""></div>
+                        <div class="project-info">
+                            <h3>Coming Soon</h3>
+                            <p></p>
+                            <div class="project-links">
+                                <a href="#" class="btn-small"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="btn-small primary"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
                         </div>
-                        <a href="#" class="btn-outline" target="_blank">Lihat Project <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="project-card">
-                        <h3>[Nama Project Lain]</h3>
-                        <p>[Deskripsi project lainnya. Kamu bisa menambah atau mengurangi jumlah card sesuai kebutuhan.]</p>
-                        <div class="project-tags">
-                            <span>PHP</span>
-                            <span>MySQL</span>
+                    <div class="project-card tilt-card">
+                        <div class="project-img"><img src="" alt=""></div>
+                        <div class="project-info">
+                            <h3>Coming Soon</h3>
+                            <p></p>
+                            <div class="project-links">
+                                <a href="#" class="btn-small"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="btn-small primary"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
                         </div>
-                        <a href="#" class="btn-outline" target="_blank">Lihat Project <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION KONTAK (di sini sebagai bagian utama, tapi akan ada juga di footer) -->
-        <section id="contact" class="contact">
+        
+        <!-- PENDIDIKAN SECTION -->
+        <section id="pendidikan" class="pendidikan section">
             <div class="container">
-                <h2 class="section-title">Hubungi Saya</h2>
-                <p class="section-subtitle">Silakan hubungi saya melalui email atau media sosial di bawah ini</p>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <p><strong>Email:</strong> <a href="mailto:ezzarmuhammadakbarfirdaus@gmail.com">ezzarmuhammadakbarfirdaus@gmail.com</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ezzar-muhammad-akbar-firdaus-51492537a/" target="Ezzar-Muhammad-Akbar-Firdaus">Ezzar-Muhammad-Akbar-Firdaus</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <p><strong>GitHub:</strong> <a href="https://github.com/EzzarMuhammadAkbarFirsaus" target="github.com/EzzarMuhammadAkbarFirsaus">github.com/EzzarMuhammadAkbarFirsaus</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-instagram"></i>
-                            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ezzar_maf/" target="@ezzar_maf">@ezzarmaf</a></p>
+                <h2 class="section-title">PENDIDIKAN <span class="neon-bar"></span></h2>
+                <div class="projects-grid">
+                    <div class="pendidikan-card tilt-card">
+                        <div class="project-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2ofeAdGnnkEl4-N1Url2D83wKtSwDdYp-Q&s" alt="belum"></div>
+                        <div class="project-info">
+                            <h3>SDN 006 Sialang Kubang</h3>
                         </div>
                     </div>
-                    <!-- Bisa tambahkan form kontak sederhana jika mau -->
+                    <div class="project-card tilt-card">
+                        <div class="project-img"><img src="https://bekawan.com/wp-content/uploads/2025/07/FB_IMG_1752505302037.jpg" alt="belum"></div>
+                        <div class="project-info">
+                            <h3>MTS Miftahuddin</h3>
+                        </div>
+                    </div>
+                    <div class="project-card tilt-card">
+                        <div class="project-img"><img src="https://bgnnews.co.id/assets/berita/original/81798540076-img_20250523_182451.jpg" alt="belum"></div>
+                        <div class="project-info">
+                            <h3>SMA Negeri 1 Perhentian Raja</h3>
+                        </div>
+                    </div>
+                    <div class="project-card tilt-card">
+                        <div class="project-img"><img src="https://www.lp3ipekanbaru.ac.id/uploads/campus/kampus_lp3i_pku.png" alt="belum"></div>
+                        <div class="project-info">
+                            <h3>Politeknik LP3I Pekanbaru</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- FOOTER (dengan kontak dan menu) -->
-    <footer class="footer" id="footer-contact">
-        <ul class="footer-links">
-            <li><a href="#contact">Kontak</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#education">Pendidikan</a></li>
-            <li><a href="#skills">Keahlian</a></li>
-            <li><a href="#hobbies">Hobi</a></li>
-            <li><a href="#home">Beranda</a></li>
-        </ul>
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates" class="certificates section">
+            <div class="container">
+                <h2 class="section-title">Sertifikasi <span class="neon-bar"></span></h2>
+                <div class="certs-grid">
+                    <div class="cert-card"><img src="games/images/serti1.jpeg" alt="" class="cert-img"></div>
+                    <div class="cert-card"><img src="games/images/serti2.jpeg" alt="" class="cert-img"></div>
+                    <div class="cert-card"><img src="games/images/serti3.jpeg" alt="" class="cert-img"></div>
+                    <div class="cert-card"><img src="" alt="" class="cert-img">Coming Soon</div>
+                </div>
+            </div>
+        </section>
 
-        <div class="social-icons">
-            <a href="mailto:ezzarmuhammadakbarfirdaus@gmail.com" aria-label="email"><i class="far fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/ezzar-muhammad-akbar-firdaus-51492537a/" target="_blank" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/EzzarMuhammadAkbarFirsaus" target="_blank" aria-label="github"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/ezzar_maf/" target="_blank" aria-label="instagram"><i class="fab fa-instagram"></i></a>
-        </div>
+        <!-- MINI GAME SECTION -->
+        <section id="mini-game" class="game-section section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="game-badge">🎮 MINI GAME ZONE 🎮</span>
+                    QuickMath! <span class="neon-bar"></span>
+                </h2>
+                <div class="game-container">
+                    <div class="game-wrapper">
+                        <div class="game-header-decor">
+                            <span class="decor-left">⚡</span>
+                            <span class="decor-text">CHALLENGE YOURSELF</span>
+                            <span class="decor-right">⚡</span>
+                        </div>
+                        <iframe src="games/quickmath.html" frameborder="0" 
+                                style="width: 100%; height: 600px; border-radius: 30px; background: transparent;" 
+                                loading="lazy" id="game-iframe">
+                        </iframe>
+                        <div class="game-footer-decor">
+                            <span class="decor-item">🔥</span>
+                            <span class="decor-item">10 Soal</span>
+                            <span class="decor-item">⏱️ 10 Detik</span>
+                            <span class="decor-item">🔥</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="copyright">
-            © 2025 Ezzar Muhammad Akbar Firdaus. Dibuat dengan <i class="fas fa-heart" style="color: #ff6b9d;"></i> untuk portofolio.
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Hubungi Saya <span class="neon-bar"></span></h2>
+                <div class="contact-content">
+
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/xvzwzbeg" method="POST">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" required placeholder=" " />
+                            <label for="name">Nama Lengkap</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" required placeholder=" " />
+                            <label for="email">Alamat Email</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                            <label for="message">Pesan</label>
+                        </div>
+                        <button type="submit" class="btn-primary full-width"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="https://github.com/emafgaming" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/ezzar_maf/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ezzar-muhammad-akbar-firdaus-51492537a/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:ezzarmuhammadakbarfirdaus@gmail.com" aria-label="email" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Ezzar Muhammad Akbar Firdaus · dibangun dengan <i class="fas fa-heart" style="color: var(--neon);"></i> untuk masa depan digital</p>
+            <div class="footer-social">
+                <a href="https://github.com/emafgaming"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/ezzar_maf/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ezzar-muhammad-akbar-firdaus-51492537a/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:ezzarmuhammadakbarfirdaus@gmail.com"><i class="fab fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <!-- Smooth scroll sederhana (opsional) -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- MODAL SERTIFIKAT -->
+    <div id="cert-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <!-- KURSOR KUSTOM -->
+    <div class="custom-cursor"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
